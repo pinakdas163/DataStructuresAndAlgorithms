@@ -1,4 +1,4 @@
-package com.daspinak.ExtendedDataStructures;
+package com.daspinak.extendedDataStructures;
 
 class TwoStacks<V> {
     private int maxSize;

@@ -1,4 +1,4 @@
-package com.daspinak.ExtendedDataStructures;
+package com.daspinak.extendedDataStructures;
 
 import com.daspinak.datastructures.MyStack;
 
