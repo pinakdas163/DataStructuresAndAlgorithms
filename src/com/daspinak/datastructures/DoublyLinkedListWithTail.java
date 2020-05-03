@@ -1,9 +1,11 @@
+package com.daspinak.datastructures;
+
 public class DoublyLinkedListWithTail<T> {
     private Node headNode;
     private Node tailNode;
     private int currentSize;
 
-    private class Node {
+    public class Node {
         private T data;
         private Node prev;
         private Node next;
@@ -12,6 +14,18 @@ public class DoublyLinkedListWithTail<T> {
             this.data = data;
             this.prev = null;
             this.next = null;
+        }
+
+        public T getData() {
+            return data;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public Node getPrev() {
+            return prev;
         }
     }
 
@@ -23,6 +37,28 @@ public class DoublyLinkedListWithTail<T> {
 
     public int getCurrentSize() {
         return this.currentSize;
+    }
+
+    public Node getHeadNode() {
+        return headNode;
+    }
+
+    public Node getTailNode() {
+        return tailNode;
+    }
+
+    public T getHeadNodeData() {
+        if (headNode == null) {
+            return null;
+        }
+        return headNode.data;
+    }
+
+    public T getTailNodeData() {
+        if (tailNode == null) {
+            return null;
+        }
+        return tailNode.data;
     }
 
     public boolean isEmpty() {
@@ -112,17 +148,17 @@ public class DoublyLinkedListWithTail<T> {
         }
     }
 
-    public T getHeadNodeData() {
-        if (headNode == null) {
-            return null;
-        }
-        return headNode.data;
-    }
+    public boolean dataExist(T data) {
+        Node temp = headNode;
 
-    public T getTailNodeData() {
-        if (tailNode == null) {
-            return null;
+        while (temp != null) {
+            if (temp.data.equals(data)) {
+                return true;
+            }
+
+            temp = temp.next;
         }
-        return tailNode.data;
+
+        return false;
     }
 }

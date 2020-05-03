@@ -30,7 +30,7 @@ public class MyQueue<T> {
 
     public void enqueue(T value) {
         if (isFull()) {
-            System.out.println("Queue is full");
+            //System.out.println("Queue is full");
             return;
         }
 
@@ -39,7 +39,7 @@ public class MyQueue<T> {
             this.first = this.last;
         }
         this.arr[last] = value;
-        System.out.println("Item " + value + " added successfully");
+        //System.out.println("Item " + value + " added successfully");
         this.currentSize++;
     }
 
@@ -53,7 +53,7 @@ public class MyQueue<T> {
 
     public T dequeue() {
         if (isEmpty()) {
-            System.out.println("Queue is empty, nothing to deque");
+            //System.out.println("Queue is empty, nothing to deque");
             return null;
         }
 
@@ -65,7 +65,7 @@ public class MyQueue<T> {
         } else {
             this.first = (++this.first) % this.maxSize;
         }
-        System.out.println("Item " +  val + " is removed from queue");
+        //System.out.println("Item " +  val + " is removed from queue");
         return val;
     }
 
